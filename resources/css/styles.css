@@ -1,0 +1,93 @@
+.navbar {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+}
+
+.custom-navbar {
+    background-color: rgba(231, 200, 154, 0.388);
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+.custom-footer{
+    background-color: rgba(231, 200, 154, 0.388);
+}
+
+.custom-card{
+    background-color: rgba(231, 200, 154, 0.388);
+}
+
+/* ChatGPT assisted in helping to make this custom button animation */
+/* Inspiration from BandaiNamco's website */
+.navbar-toggler-icon {
+    display: none;
+}
+
+.custom-toggler {
+    width: 25px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.custom-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.toggler-icon {
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.toggler-icon:nth-child(1) {
+    top: 0;
+}
+
+.toggler-icon:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toggler-icon:nth-child(3) {
+    bottom: 0;
+}
+
+.custom-toggler:not(.collapsed) .toggler-icon:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.custom-toggler:not(.collapsed) .toggler-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.custom-toggler:not(.collapsed) .toggler-icon:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.resume-btn {
+    display: inline-block;
+    background-color: blanchedalmond;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
