@@ -1,0 +1,6 @@
+Github link to pages implementation: https://github.com/rjrasizer/rasizer-website
+Website url from github: https://rjrasizer.github.io/rasizer-website/index.html
+
+Important notes: Had to move everything into docs to get the github pages implementation to work.
+Also had to move resources to within docs for pages implementation.
+Needed to rename home.html to index.html in order for pages to read the right home file.

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Riley Rasizer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="resources/css/styles.css">
+    <link rel="stylesheet" href="resources/css/calendar.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="resources/img/colorado_buffaloes_logo_misc_20103151.png" alt="Logo" width="60px" height="auto"
+                    class="me-2">
+                <span class="brand-text fs-3">Riley Rasizer </span>
+            </a>
+            <button class="navbar-toggler custom-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Resume</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="projects.html">Personal Website</a></li>
+                            <li><a class="dropdown-item" href="projects.html">Terminal Board Game</a></li>
+                            <li><a class="dropdown-item" href="projects.html">Arch Linux</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hobbies.html">Hobbies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="calendar.html">Calendar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-2">
+            <div class="custom-container">
+                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#event_modal"
+                    onclick="resetEventModal()">Create Event</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container-md container-fluid py-4 h-100">
+                <div id="calendar" class="row h-100">
+                    <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="sunday">
+                        <div class="h6 text-center position-relative py-2 day">
+                            Sunday
+                        </div>
+                    </div>
+                    <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="monday">
+                        <div class="h6 text-center position-relative py-2 day">
+                            Monday
+                        </div>
+                    </div>
+                    <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="tuesday">
+                        <div class="h6 text-center position-relative py-2 day">
+                            Tuesday
+                        </div>
+                    </div>
+                    <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="wednesday">
+                        <div class="h6 text-center position-relative py-2 day">
+                            Wednesday
+                        </div>
+                    </div>
+                    <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="thursday">
+                        <div class="h6 text-center position-relative py-2 day">
+                            Thursday
+                        </div>
+                    </div>
+                    <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="friday">
+                        <div class="h6 text-center position-relative py-2 day">
+                            Friday
+                        </div>
+                    </div>
+                    <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="saturday">
+                        <div class="h6 text-center position-relative py-2 day">
+                            Saturday
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="event_modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Event</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="data-form">
+                        <label for="event_name">Event Name</label>
+                        <input type="text" id="event_name" name="event_name"><br><br>
+
+                        <label for="event_category">Category</label>
+                        <select id="event_category" name="event_category"><br><br>
+                            <option value="">--Select--</option>
+                            <option value="Homework">Homework</option>
+                            <option value="Work">Work</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Test">Test</option>
+                            <option value="Reading">Reading</option>
+                            <option value="Meeting">Meeting</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                        </select><br><br>
+
+                        <label for="event_weekday">Weekday</label>
+                        <select id="event_weekday" name="event_weekday">
+                            <option value="">--Select--</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                            <option value="sunday">Sunday</option>
+                        </select><br><br>
+
+                        <label for="event_time">Time</label>
+                        <input type="time" id="event_time" name="event_time"><br><br>
+
+                        <label for="event_modality">Type of Event</label>
+                        <select id="event_modality" name="event_modality" required
+                            onchange="updateLocationOptions(this.value)">
+                            <option value="" selected>--Select--</option>
+                            <option value="in_person">In-Person</option>
+                            <option value="remote">Remote</option>
+                        </select><br><br>
+
+                        <div id="location">
+                            <label for="event_location">Location</label>
+                            <input type="text" id="event_location" name="event_location"
+                                placeholder="Enter event location"><br><br>
+                        </div>
+
+                        <div id="remote_url">
+                            <label for="event_remote_url">Meeting URL</label>
+                            <input type="text" pattern="^[A-Z].+" id="event_remote_url" name="event_remote_url"
+                                placeholder="Enter a valid URL"><br><br>
+                        </div>
+
+                        <div id="attendees">
+                            <label for="event_attendees">Attendees</label>
+                            <input type="text" id="event_attendees" name="event_attendees"
+                                placeholder="Enter attendees (comma-separated)"><br><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" type="button" onclick="saveEvent()">Save
+                        Event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="custom-footer text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-2">Connect with me:</p>
+            <a href="https://github.com/rjrasizer" target="GitHub" class="me-3">
+                <img src="resources/img/github.png" alt="GitHub" width="30" height="30">
+            </a>
+            <a href="https://www.linkedin.com/in/riley-rasizer-265258325/" target="blank" class="me-3">
+                <img src="resources/img/linkedin.png" alt="LinkedIn" width="30" height="30">
+            </a>
+            <a href="https://www.instagram.com/rileyrasizer_" target="blank">
+                <img src="resources/img/instagram.png" alt="instagram" width="30" height="30">
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="resources/js/calendar.js"></script>
+
+</body>
+</html>
